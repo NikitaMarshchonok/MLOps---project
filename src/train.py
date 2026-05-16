@@ -1,5 +1,5 @@
 import mlflow
-import mlflow.sklearn
+#import mlflow.sklearn
 import pandas as pd
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
@@ -45,8 +45,8 @@ X_train, X_test, y_train, y_test = train_test_split(
 with mlflow.start_run():
     # Параметры модели  - записываем что использовали
 
-    n_estimators = 100
-    max_depth = 5
+    n_estimators = 200
+    max_depth = 10
     mlflow.log_param('n_estimators', n_estimators)
     mlflow.log_param('max_depth', max_depth)
 
@@ -69,7 +69,7 @@ mlflow.log_metric('accuracy', accuracy)
 mlflow.log_metric('f1_score', f1)
 
 # сохраняем саму модель 
-mlflow.sklearn.log_model(model, 'random_forest_model')
+#mlflow.sklearn.log_model(model, 'random_forest_model')
 
 print(f"Accuracy:{accuracy:.3f}")
 print(f"F1 Score:{f1:.3f}")
