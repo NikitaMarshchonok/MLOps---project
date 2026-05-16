@@ -1,0 +1,22 @@
+services:
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v2.11.1
+    ports:
+      - "5001:5000"
+    command: mlflow server --host 0.0.0.0 --port 5000
+    volumes:
+      - ./mlruns:/mlruns
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: mlops
+      POSTGRES_PASSWORD: mlops
+      POSTGRES_DB: mlops
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
