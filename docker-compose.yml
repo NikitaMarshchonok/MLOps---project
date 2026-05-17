@@ -61,7 +61,7 @@ services:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
       AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://mlops:mlops@postgres/mlops
       AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
-      AIRFLOW__CORE__FERNET_KEY: "dSUmBgcL3sQYuJk9XmP2aZvR7nEwT4oKqFhI1bC6yN0="
+      AIRFLOW__CORE__FERNET_KEY: ${AIRFLOW__CORE__FERNET_KEY}
       AIRFLOW__WEBSERVER__SECRET_KEY: "dSUmBgcL3sQYuJk9XmP2aZvR7nEwT4oKqFhI1bC6yN0="
     volumes:
       - ./dags:/opt/airflow/dags
