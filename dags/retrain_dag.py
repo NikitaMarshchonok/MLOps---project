@@ -11,7 +11,7 @@ default_args = {
 
 @dag(
     dag_id="model_retraining",
-    schedule="0 3 * * 1",        # каждый понедельник в 3 ночи
+    schedule="0 3 * * 1",
     start_date=pendulum.datetime(2024, 1, 1, tz="UTC"),
     catchup=False,
     default_args=default_args,
