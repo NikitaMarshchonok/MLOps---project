@@ -8,7 +8,7 @@ from sklearn.metrics import accuracy_score, f1_score
 
 # Говорим MLFlow куда отправлять данные
 # localhost:5001 - это наш MLflow сервер в докер!
-mlflow.set_tracking_uri('http://localhost:5001')
+mlflow.set_tracking_uri("http://mlflow:5000")
 
 # название эксперимента
 mlflow.set_experiment('churn_prediction')
